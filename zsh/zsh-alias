@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Alias for z-shell
+alias ls='exa -alh --icons'
+alias vim='nvim'

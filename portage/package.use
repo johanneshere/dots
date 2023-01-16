@@ -1,0 +1,20 @@
+###############################################
+#######         USE FLAGS               #######
+###############################################
+
+################## Global #####################
+
+# Exclude these use flags
+*/* -tiff -mesa -wayland -gnome -kde -qt5 -qt6 -consolekit -python_targets_pythob2_7 -systemd -cups -dvd
+*/* -dvdr -cdr -ios -ipod -css -cdr -cdda -wifi -ppds -libnotify -spell
+
+# Use flags
+*/* nvidia pulseaudio
+
+################## Local #####################
+
+## Pipewire ##
+media-sound/pulseaudio -daemon
+
+## Nvidia drivers ##
+x11-drivers/nvidia-drivers X driver tools dist-kernel -wayland

@@ -9,12 +9,26 @@
 */* -dvdr -cdr -ios -ipod -css -cdr -cdda -wifi -ppds -libnotify -spell
 
 # Use flags
-*/* nvidia pulseaudio
+*/* X nvidia pulseaudio
 
 ################## Local #####################
 
 ## Pipewire ##
-media-sound/pulseaudio -daemon
+media-sound/pulseaudio -daemon 
+media-video/pipewire X bluetooth dbus flatpak sound-server gstreamer pipewire-alsa screencast udev
+
+## Xorg ##
+x11-base/xorg-server elogind udev xorg
 
 ## Nvidia drivers ##
 x11-drivers/nvidia-drivers X driver tools dist-kernel -wayland
+# required by media-sound/pulseaudio-daemon-16.1-r6::gentoo[alsa-plugin,alsa]
+# required by media-libs/libpulse-16.1-r2::gentoo
+# required by media-libs/libpulse (argument)
+#>=media-plugins/alsa-plugins-1.2.7.1-r1 pulseaudio
+# required by sys-boot/os-prober-1.81::gentoo
+# required by os-prober (argument)
+>=sys-boot/grub-2.06-r5 mount
+
+## Awesome wm ##
+x11-wm/awesome dbus
